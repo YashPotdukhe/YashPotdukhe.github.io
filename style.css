@@ -17,6 +17,7 @@ p {
     width: 50%;
   }
 
+
   figure {
     size: 50%;
     border: 1px #cccccc solid;
@@ -25,8 +26,8 @@ p {
   }
   
   figcaption {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     font-style: italic;
     padding: 2px;
     text-align: center;
@@ -43,7 +44,8 @@ p {
     top: 50%;  
     width: 24em;
     margin: 0 auto;
-    border-right: 2px solid rgba(255,255,255,.75);
+    /* border-right: 2px solid rgba(255,255,255,.75); */
+    border-right: 2px solid black;
     font-size: 180%;
     text-align: center;
     white-space: nowrap;
@@ -56,11 +58,24 @@ p {
   animation: typewriter 6s steps(44) 1s 1 normal both,
              blinkTextCursor 1000ms steps(20) infinite normal;
 }
+.anim-backspace{
+  animation: backspace 6s steps(44) 1s 1 normal both,
+             blinkTextCursor 1000ms steps(20) infinite normal;
+}
 @keyframes typewriter{
   from{width: 0;}
-  to{width: 24em;}
+  /* from{width: 2;} */
+  to{width: 8em;}
+  /* to{width: 0em;} */
+}
+
+@keyframes backspace{
+  from{width: 8em;}
+  to{width: 0em;}
+  
 }
 @keyframes blinkTextCursor{
-  from{border-right-color: rgba(255,255,255,.75);}
+  /* from{border-right-color: rgba(255,255,255,.75);} */
+  from{border-right-color: black;}
   to{border-right-color: transparent;}
 }
